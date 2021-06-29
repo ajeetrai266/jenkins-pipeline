@@ -8,6 +8,7 @@ pipeline {
                 sh 'sudo terraform apply --auto-approve'
                 
                 stash includes: 'inventory', name: 'ansible_inventory'
+                sh 'sudo terraform destroy --auto-approve'
                 }
         }
     }
