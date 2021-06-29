@@ -1,20 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage("tf-code") {
+        stage("Terraform-instance") {
             steps {
-               git branch: 'main', url: 'https://github.com/ajeetrai266/Terraform.git'
-            }
-        }
-        stage("tf") {
-            steps {
-                sh 'terraform init'
-                sh 'sudo terraform apply -auto-approve'
-            }
-        }
-        stage("playbook-run") {
-            steps {
-                ansiblePlaybook installation: 'ansible-1', playbook: 'playbook.yml'
+               git branch: 'main', url: 'https://github.com/ajeetrai266/Terraform-instance.git'
             }
         }
     }
