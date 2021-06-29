@@ -7,8 +7,6 @@ pipeline {
             }
             steps {
                 sh 'sudo terraform init'
-            }
-            steps {
                 sh 'sudo terraform apply --auto-approve'
             }
         }
