@@ -5,6 +5,12 @@ pipeline {
             steps {
                git branch: 'main', url: 'https://github.com/ajeetrai266/Terraform-instance.git'
             }
+            steps {
+                sh 'sudo terraform init'
+            }
+            steps {
+                sh 'sudo terraform apply --auto-approve'
+            }
         }
     }
 }
