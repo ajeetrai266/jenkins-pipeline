@@ -1,6 +1,7 @@
 pipeline {
     agent any
     stages {
+        
         stage("terraform-instance") {
             steps {
                git branch: 'main', url: 'https://github.com/ajeetrai266/Terraform-instance.git'
@@ -11,5 +12,6 @@ pipeline {
                 sh 'sudo terraform destroy --auto-approve'
                 }
         }
+        
     }
 }
