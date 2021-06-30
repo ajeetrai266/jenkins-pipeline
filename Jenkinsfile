@@ -15,8 +15,9 @@ pipeline {
         
         stage("ansible-k8s-configure") { 
             steps { 
-                git branch: 'main', url: 'https://github.com/ajeetrai266/Ansible-K8s-Cluster.git'
-                ansiblePlaybook installation: 'ansible-1', playbook: 'playbook.yml'
+                sh 'ansible all -m ping'
+               /* git branch: 'main', url: 'https://github.com/ajeetrai266/Ansible-K8s-Cluster.git' */
+               /* ansiblePlaybook installation: 'ansible-1', playbook: 'playbook.yml' */
                 /* sh 'ansible-galaxy install -r requirements.yml -p .' */
                 /* sh 'ansible-playbook playbook.yml' */
             }
