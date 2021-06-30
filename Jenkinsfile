@@ -17,6 +17,7 @@ pipeline {
             steps { 
                 git branch: 'main', url: 'https://github.com/ajeetrai266/Ansible-K8s-Cluster.git'
                 unstash 'ansible_inventory'
+                sh 'sudo ansible-galaxy install -r requirements.yml'
                 sh 'sudo ansible-playbook playbook.yml'
             }
         }
